@@ -11,6 +11,7 @@ test-suite/__pycache__
 .idea/
 
 # Allure results and report files
+allure_reports/
 allure-results/
 
 # Log files
