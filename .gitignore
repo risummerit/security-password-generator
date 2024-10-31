@@ -1,0 +1,21 @@
+# Byte-compiled files
+__pycache__/
+test-suite/__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache
+
+# IDE and editor settings
+.vscode/
+.idea/
+
+# Allure results and report files
+allure-results/
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
