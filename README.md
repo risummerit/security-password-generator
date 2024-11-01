@@ -24,7 +24,7 @@ Frameworks full documantations:
 
 ### Set up the project locally and install virtual environment for this project
 1. Clone the repo, running command
-"git clone [https://github.com/risummerit/security-password-generator.git]"
+"git clone https://github.com/risummerit/security-password-generator.git"
 2. Go to the project directory for further steps
 
 ### In project directory:
