@@ -198,7 +198,78 @@ def test_password_length_slider_moving_right(
     for _ in range(step):
         slider.press("ArrowRight")
     password = password_elements["password_field"].input_value()
-    assert password, "Password field should have a generated value"
+    assert password, "Password field should not be empty"
+    assert (
+        len(password) == password_length
+    ), f"Expected {password_length}, got {len(password)}"
+
+
+@allure.title("Password Generator")
+@allure.description("Slider Moving Left for Length")
+@allure.testcase("TC008")
+@pytest.mark.parametrize(
+    "password_length, step", [(31, 1), (23, 9), (18, 14), (10, 22), (6, 26)]
+)
+@pytest.mark.password_generator
+@pytest.mark.password_length_slider
+@pytest.mark.regression
+def test_password_length_slider_moving_left(
+    password_length, step, page, password_elements
+):
+    # Starting with the slider at max position
+    password_elements["length_input"].fill("32")
+    slider = page.locator('input[type="range"]')
+    # Moving the slider left
+    for _ in range(step):
+        slider.press("ArrowLeft")
+    # Verifying length and generated password
+    password = password_elements["password_field"].input_value()
+    assert password, "Password field should not be empty"
+    assert (
+        len(password) == password_length
+    ), f"Expected {password_length}, got {len(password)}"
+
+
+@allure.title("Password Generator")
+@allure.description("Arrow Up for Setting Password Length")
+@allure.testcase("TC009")
+@pytest.mark.parametrize(
+    "password_length, step", [(7, 1), (12, 6), (18, 12), (24, 18), (32, 26)]
+)
+@pytest.mark.password_generator
+@pytest.mark.password_length_arrows
+@pytest.mark.regression
+def test_password_length_arrow_up(password_length, step, page, password_elements):
+    slider = page.locator('input[type="range"]')
+    # Increasing password length using Arrow Up
+    for _ in range(step):
+        slider.press("ArrowUp")
+    # Verifying length and generated password
+    password = password_elements["password_field"].input_value()
+    assert password, "Password field should not be empty"
+    assert (
+        len(password) == password_length
+    ), f"Expected {password_length}, got {len(password)}"
+
+
+@allure.title("Password Generator")
+@allure.description("Arrow Down for Setting Password Length")
+@allure.testcase("TC010")
+@pytest.mark.parametrize(
+    "password_length, step", [(31, 1), (23, 9), (18, 14), (10, 22), (6, 26)]
+)
+@pytest.mark.password_generator
+@pytest.mark.password_length_arrows
+@pytest.mark.regression
+def test_password_length_arrow_down(password_length, step, page, password_elements):
+    password_elements["length_input"].fill("32")
+    slider = page.locator('input[type="range"]')
+    # Decreasing password length using Arrow Down
+    for _ in range(step):
+        slider.press("ArrowDown")
+    # Verifying length and generated password
+    password = password_elements["password_field"].input_value()
+    assert password, "Password field should not be empty"
     assert (
         len(password) == password_length
     ), f"Expected {password_length}, got {len(password)}"
@@ -234,7 +305,7 @@ def test_copy_password_main_button_copies_password_to_clipboard(
     copy_password_button = page.locator('button[type="button"][title="Copy password"]')
     copy_password_button.click()
     page.wait_for_timeout(1000)  # 1 second wait to ensure clipboard is updated
-    # Retrieving clipboard content and verify it matches the password
+    # Retrieving clipboard content and verifying it matches the password
     clipboard_content = page.evaluate(
         "async () => await navigator.clipboard.readText()"
     )
