@@ -3,8 +3,8 @@
 # Test automation repo for Security Password Generator
 
 Frameworks full documantations:
-PyTest documentation https://docs.pytest.org
-Playwright documentation https://playwright.dev/python/docs/intro
+- PyTest documentation https://docs.pytest.org
+- Playwright documentation https://playwright.dev/python/docs/intro
 
 ## Quality Assurance Automated Testing
 
