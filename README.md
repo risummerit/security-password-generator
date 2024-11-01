@@ -11,16 +11,12 @@ Frameworks full documantations:
 ### Prerequirements:
 - Make sure that Python 3.12.4 is installed on your machine, if not installation instructions are here: [https://www.python.org/downloads/release/python-3124/]
 - Make sure you have pip installed, in terminal run command pip --version. If not installed follow this instractions [https://pip.pypa.io/en/stable/installation/]
-- Make sure you have pipenv installed globally, chack it running command 
-pipenv --version
-If not installed, run command
-pip install pipenv
-Check again if it's installed by checking its version
+- Make sure you have pipenv installed globally, chack it running command "pipenv --version". If not installed, run command "pip install pipenv". Check again if it's installed by checking its version
 - Optional, to be able viaully see tests reports - Make sure allure is installed on your machine, if not follow this documentation for installation [https://allurereport.org/docs/install/]
 
 ### Set up the project locally and install virtual environment for this project
 1. Clone the repo, running command
-git clone [https://github.com/risummerit/security-password-generator.git]
+"git clone [https://github.com/risummerit/security-password-generator.git]"
 2. Go to the project directory for further steps
 
 ### in project directory:
