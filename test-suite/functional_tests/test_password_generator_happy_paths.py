@@ -3,7 +3,6 @@ import pytest
 from playwright.sync_api import expect
 
 
-@allure.title("Password Generator")
 @allure.description("Smoke Test")
 @allure.testcase("TC001")
 @pytest.mark.smoke
@@ -14,7 +13,6 @@ def test_password_generator_smoke_test(page, password_elements):
     assert "Random Password Generator" in page.title(), "Page failed to load."
 
 
-@allure.title("Password Generator")
 @allure.description("Password Length Input and Generated Password Length")
 @allure.testcase("TC002")
 @pytest.mark.parametrize("password_length", ["6", "12", "18", "24", "32"])
@@ -34,7 +32,6 @@ def test_password_length_input_and_generated_password_length(
     ), f"Expected password length {password_length}, but got {len(password)}"
 
 
-@allure.title("Password Generator")
 @allure.description("Default Checkbox Setup and Password Content")
 @allure.testcase("TC004")
 @pytest.mark.password_generator
@@ -90,7 +87,6 @@ checkbox_combinations = [
 ]
 
 
-@allure.title("Password Generator")
 @allure.description("Checkbox Combinations for Password Content")
 @allure.testcase("TC005")
 @pytest.mark.parametrize(
@@ -182,7 +178,6 @@ def test_checkboxes_generated_password_combinations(
         ), "Password should not contain symbols."
 
 
-@allure.title("Password Generator")
 @allure.description("Slider Moving Right for Length")
 @allure.testcase("TC007")
 @pytest.mark.parametrize(
@@ -204,7 +199,6 @@ def test_password_length_slider_moving_right(
     ), f"Expected {password_length}, got {len(password)}"
 
 
-@allure.title("Password Generator")
 @allure.description("Slider Moving Left for Length")
 @allure.testcase("TC008")
 @pytest.mark.parametrize(
@@ -230,7 +224,6 @@ def test_password_length_slider_moving_left(
     ), f"Expected {password_length}, got {len(password)}"
 
 
-@allure.title("Password Generator")
 @allure.description("Arrow Up for Setting Password Length")
 @allure.testcase("TC009")
 @pytest.mark.parametrize(
@@ -252,7 +245,6 @@ def test_password_length_arrow_up(password_length, step, page, password_elements
     ), f"Expected {password_length}, got {len(password)}"
 
 
-@allure.title("Password Generator")
 @allure.description("Arrow Down for Setting Password Length")
 @allure.testcase("TC010")
 @pytest.mark.parametrize(
@@ -275,7 +267,6 @@ def test_password_length_arrow_down(password_length, step, page, password_elemen
     ), f"Expected {password_length}, got {len(password)}"
 
 
-@allure.title("Password Generator")
 @allure.description("Generate Password Button Test")
 @allure.testcase("TC011")
 @pytest.mark.password_generator
@@ -288,7 +279,6 @@ def test_password_generator_generate_password_button(page, password_elements):
     assert old_password != new_password, "New password not generated."
 
 
-@allure.title("Password Generator")
 @allure.description("Copy Password Button Test")
 @allure.testcase("TC013")
 @pytest.mark.password_generator

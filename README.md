@@ -6,6 +6,7 @@ Click button "Run workflow" to trigger the tests run. Renew the page to see the 
 ![image](https://github.com/user-attachments/assets/5c8788fc-9b8a-4d8f-812e-3396be56de21)
 
 Accessing [allure report](https://risummerit.github.io/security-password-generator/allure-report/) for most recent test run.
+Make sure to clear browser cache to see new report after each new tests run.
 
 # Test automation repo for Security Password Generator
 
